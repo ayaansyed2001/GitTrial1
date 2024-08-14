@@ -8,8 +8,6 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import java.text.DecimalFormat
 
 class MainActivity : AppCompatActivity() {
@@ -25,8 +23,10 @@ class MainActivity : AppCompatActivity() {
         num2 = findViewById(R.id.num2)
         resulttv = findViewById(R.id.result)
 
-        val addition = findViewById<Button>(R.id.add)
-        addition.setOnClickListener { performCalculation('+') }
+        val add = findViewById<Button>(R.id.add)
+        add.setOnClickListener { performCalculation('+') }
+        val sub = findViewById<Button>(R.id.sub)
+        sub.setOnClickListener { performCalculation('-') }
         val multiplication = findViewById<Button>(R.id.multiplication)
         multiplication.setOnClickListener { performCalculation('*') }
         val division = findViewById<Button>(R.id.division)
@@ -48,6 +48,7 @@ class MainActivity : AppCompatActivity() {
         var result = 0.0
         when (operator) {
             '+' -> result = num1 + num2
+            '-' -> result = num1 - num2
             '*' -> result = num1 * num2
             '/' -> result = if (num2 != 0.0) {
                 num1 / num2
@@ -61,18 +62,10 @@ class MainActivity : AppCompatActivity() {
         resulttv!!.text = "Result" + df.format(result)
     }
 
-    @SuppressLint("SetTextI18n")
-    private fun calculateSquareRoot() {
-        val num1str = num1!!.text.toString()
-        if (num1str.isEmpty()) {
-            Toast.makeText(this, "please enter a number", Toast.LENGTH_SHORT).show()
-            return
-        }
 
-        val num = num1str.toDouble()
-        val sqrtResult = Math.sqrt(num)
+
+
         val df = DecimalFormat("#.##")
-        resulttv!!.text = "SquareRoot:" + df.format(sqrtResult)
+
 
     }
-}
