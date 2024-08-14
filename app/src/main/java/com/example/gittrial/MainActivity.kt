@@ -25,6 +25,10 @@ class MainActivity : AppCompatActivity() {
         num2 = findViewById(R.id.num2)
         resulttv = findViewById(R.id.result)
 
+        val add = findViewById<Button>(R.id.add)
+        add.setOnClickListener { performCalculation('+') }
+        val sub = findViewById<Button>(R.id.sub)
+        sub.setOnClickListener { performCalculation('-') }
         val multiplication = findViewById<Button>(R.id.multiplication)
         multiplication.setOnClickListener { performCalculation('*') }
         val division = findViewById<Button>(R.id.division)
