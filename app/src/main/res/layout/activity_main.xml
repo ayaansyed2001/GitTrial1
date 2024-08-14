@@ -57,7 +57,7 @@
         app:layout_constraintVertical_bias="0.197" />
 
     <Button
-        android:id="@+id/into"
+        android:id="@+id/multiplication"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="*"
@@ -69,7 +69,7 @@
         app:layout_constraintVertical_bias="0.197" />
 
     <Button
-        android:id="@+id/div"
+        android:id="@+id/division"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="/"
@@ -81,7 +81,7 @@
         app:layout_constraintVertical_bias="0.196" />
 
     <Button
-        android:id="@+id/sqrt"
+        android:id="@+id/squareRoot"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="sqrt"
