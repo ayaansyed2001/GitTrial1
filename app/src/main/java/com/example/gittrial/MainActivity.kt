@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
         val division = findViewById<Button>(R.id.division)
         division.setOnClickListener { performCalculation('/') }
         val squareRoot = findViewById<Button>(R.id.squareRoot)
-        squareRoot.setOnClickListener { calculateSquareRoot()}
+        squareRoot.setOnClickListener { calculateSquareRoot() }
     }
 
     private fun performCalculation(operator: Char) {
