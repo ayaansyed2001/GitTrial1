@@ -8,8 +8,6 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import java.text.DecimalFormat
 
 class MainActivity : AppCompatActivity() {
@@ -64,18 +62,10 @@ class MainActivity : AppCompatActivity() {
         resulttv!!.text = "Result" + df.format(result)
     }
 
-    @SuppressLint("SetTextI18n")
-    private fun calculateSquareRoot() {
-        val num1str = num1!!.text.toString()
-        if (num1str.isEmpty()) {
-            Toast.makeText(this, "please enter a number", Toast.LENGTH_SHORT).show()
-            return
-        }
 
-        val num = num1str.toDouble()
-        val sqrtResult = Math.sqrt(num)
+
+
         val df = DecimalFormat("#.##")
-        resulttv!!.text = "SquareRoot:" + df.format(sqrtResult)
+
 
     }
-}
