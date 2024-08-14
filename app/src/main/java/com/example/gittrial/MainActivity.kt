@@ -29,7 +29,8 @@ class MainActivity : AppCompatActivity() {
         multiplication.setOnClickListener { performCalculation('*') }
         val division = findViewById<Button>(R.id.division)
         division.setOnClickListener { performCalculation('/') }
-
+        val squareRoot = findViewById<Button>(R.id.squareRoot)
+        squareRoot.setOnClickListener { calculateSquareRoot() }
     }
 
     private fun performCalculation(operator: Char) {
@@ -45,8 +46,6 @@ class MainActivity : AppCompatActivity() {
         val num2 = num2Str.toDouble()
         var result = 0.0
         when (operator) {
-            '+' -> result = num1 + num2
-            '-' -> result = num1 - num2
             '*' -> result = num1 * num2
             '/' -> result = if (num2 != 0.0) {
                 num1 / num2
