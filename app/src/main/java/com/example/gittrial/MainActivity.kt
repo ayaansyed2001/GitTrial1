@@ -25,6 +25,8 @@ class MainActivity : AppCompatActivity() {
         num2 = findViewById(R.id.num2)
         resulttv = findViewById(R.id.result)
 
+        val addition = findViewById<Button>(R.id.add)
+        addition.setOnClickListener { performCalculation('+') }
         val multiplication = findViewById<Button>(R.id.multiplication)
         multiplication.setOnClickListener { performCalculation('*') }
         val division = findViewById<Button>(R.id.division)
@@ -46,7 +48,6 @@ class MainActivity : AppCompatActivity() {
         var result = 0.0
         when (operator) {
             '+' -> result = num1 + num2
-            '-' -> result = num1 - num2
             '*' -> result = num1 * num2
             '/' -> result = if (num2 != 0.0) {
                 num1 / num2
